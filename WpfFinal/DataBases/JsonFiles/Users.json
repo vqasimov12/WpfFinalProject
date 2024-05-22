@@ -1,10 +1,60 @@
 [
   {
     "AllBooks": [
-   
+      {
+        "Book": {
+          "BookName": "The Hound of Baskerville",
+          "AuthorName": "Arthur K.D.",
+          "Count": 2,
+          "Status": true,
+          "BookGanre": "Adventure",
+          "Image": "../../../Images/TheDog.jpg",
+          "Availability": "Availabile"
+        },
+        "IssueDate": "2024-05-22T14:47:53.6872558+04:00",
+        "ReturnDate": "0001-01-01T00:00:00"
+      },
+      {
+        "Book": {
+          "BookName": "Three Musketeers",
+          "AuthorName": "Alexandre D.",
+          "Count": 3,
+          "Status": true,
+          "BookGanre": "Adventure",
+          "Image": "../../../Images/Three_musketeers.jpg",
+          "Availability": "Availabile"
+        },
+        "IssueDate": "2024-05-22T14:47:55.0236425+04:00",
+        "ReturnDate": "0001-01-01T00:00:00"
+      }
     ],
     "ActiveBooks": [
-      
+      {
+        "Book": {
+          "BookName": "The Hound of Baskerville",
+          "AuthorName": "Arthur K.D.",
+          "Count": 2,
+          "Status": true,
+          "BookGanre": "Adventure",
+          "Image": "../../../Images/TheDog.jpg",
+          "Availability": "Availabile"
+        },
+        "IssueDate": "2024-05-22T14:47:53.6872558+04:00",
+        "ReturnDate": "0001-01-01T00:00:00"
+      },
+      {
+        "Book": {
+          "BookName": "Three Musketeers",
+          "AuthorName": "Alexandre D.",
+          "Count": 3,
+          "Status": true,
+          "BookGanre": "Adventure",
+          "Image": "../../../Images/Three_musketeers.jpg",
+          "Availability": "Availabile"
+        },
+        "IssueDate": "2024-05-22T14:47:55.0236425+04:00",
+        "ReturnDate": "0001-01-01T00:00:00"
+      }
     ],
     "Name": "user",
     "Email": "qasimov.vaqif512@gmail.com",

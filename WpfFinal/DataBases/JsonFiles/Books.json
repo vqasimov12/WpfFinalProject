@@ -2,16 +2,16 @@
   {
     "BookName": "Three Musketeers",
     "AuthorName": "Alexandre D.",
-    "Count": 4,
+    "Count": 3,
     "Status": true,
     "BookGanre": "Adventure",
     "Image": "../../../Images/Three_musketeers.jpg",
-    "Availability": "Not Availabile"
+    "Availability": "Availabile"
   },
   {
     "BookName": "The Hound of Baskerville",
     "AuthorName": "Arthur K.D.",
-    "Count": 3,
+    "Count": 2,
     "Status": true,
     "BookGanre": "Adventure",
     "Image": "../../../Images/TheDog.jpg",
