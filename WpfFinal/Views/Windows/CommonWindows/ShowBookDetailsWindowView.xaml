@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfFinal.Views.Windows.CommonWindows.ShowBookDetailsWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFinal.Views.Windows.CommonWindows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
+        mc:Ignorable="d"
+        Title="" Height="400" Width="340" ResizeMode="NoResize" WindowStyle="None" Background="#f1f1f1" Name="window" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--Close Button -->
+        <Button Background="Transparent" CommandParameter="{Binding ElementName=window}" 
+Command="{Binding CloseCommand}" 
+Style="{StaticResource MaterialDesignFloatingActionButton}" ToolTip="Close" HorizontalAlignment="Right" VerticalAlignment="Center" Margin=" 0 0 10 0" Width="40" Height="40" BorderThickness="10">
+            <materialDesign:PackIcon Kind="Close" Foreground="red" Padding="20"/>
+        </Button>
+
+
+        <Label Grid.Column="0" Content="Details" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="39" Foreground="#f03434" FontFamily="Times New Roman" FontStyle="Italic" FontWeight="ExtraBlack"/>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Margin="0 30" Grid.Row="0" Source="{Binding Book.Image}" />
+
+
+            <StackPanel HorizontalAlignment="Center" Grid.Row="1" Margin="12 20 " Orientation="Horizontal">
+                <StackPanel Margin="-12 0">
+                    <Label Content="Book Name" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  FontFamily="Times New Roman"/>
+                    <Label Content="Author Name" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  FontFamily="Times New Roman"/>
+                    <Label Content="Book Genre"  FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  FontFamily="Times New Roman" />  <Label Content="Aviable Count:"  FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left"  FontFamily="Times New Roman" />
+                </StackPanel>
+                <StackPanel Margin="12 0">
+                    <Label Foreground="#f03434" Content="{Binding Book.BookName}" FontSize="16" FontWeight="DemiBold"    FontFamily="Times New Roman"/>
+                    <Label Foreground="#f03434" Content="{Binding Book.AuthorName}" FontSize="16" FontWeight="DemiBold"     FontFamily="Times New Roman"/>
+                    <Label Foreground="#f03434" Content="{Binding Book.BookGanre}" FontSize="16" FontWeight="DemiBold"    FontFamily="Times New Roman"/>
+                    <Label Foreground="#f03434" Content="{Binding Book.Count}" FontSize="16" FontWeight="DemiBold"    FontFamily="Times New Roman"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

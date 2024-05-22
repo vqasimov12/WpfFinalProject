@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfFinal.Views.Windows.AdminWindows.AddBookWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFinal.Views.Windows.AdminWindows"
+xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+           Title="" Height="400" Width="340" ResizeMode="NoResize" WindowStyle="None" Background="#f1f1f1" Name="window" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--Close Button -->
+        <Button Background="Transparent" CommandParameter="{Binding ElementName=window}" 
+Command="{Binding CloseCommand}" 
+Style="{StaticResource MaterialDesignFloatingActionButton}" ToolTip="Close" HorizontalAlignment="Right" VerticalAlignment="Center" Margin=" 0 0 10 0" Width="40" Height="40" BorderThickness="10">
+            <materialDesign:PackIcon Kind="Close" Foreground="red" Padding="20"/>
+        </Button>
+
+
+        <Label Grid.Column="0" Content="{Binding LabelText}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="39" Foreground="#f03434" FontFamily="Times New Roman" FontStyle="Italic" FontWeight="ExtraBlack"/>
+
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <!-- Image Section -->
+                <StackPanel Orientation="Horizontal">
+                <Image Margin="40 -5" Height="100" Width="120" Grid.Row="0" Source="{Binding Book.Image}" />
+                    <Button Width="114" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" Background="#ff9438" Content="Select Image" HorizontalAlignment="Center" Command="{Binding SelectImageCommand}" VerticalAlignment="Bottom" Margin="0,20,10,20"/>
+                </StackPanel>
+
+                <!-- Details Section -->
+                <StackPanel HorizontalAlignment="Center" Grid.Row="1" Margin="12,20,12,20" Orientation="Horizontal">
+                    <!-- Labels -->
+                    <StackPanel >
+                        <Label Content="Book Name" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                        <Label Content="Author Name" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                        <Label Content="Book Genre" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                       <Label Content="Book Count" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                    </StackPanel>
+
+                    <!-- TextBoxes -->
+                    <StackPanel Margin="12,0,0,0">
+                        <TextBox Width="200" Foreground="#f03434" Text="{Binding Book.BookName,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                        <TextBox Width="200" Foreground="#f03434" Text="{Binding Book.AuthorName,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                        <TextBox Width="200" Foreground="#f03434" Text="{Binding Book.BookGanre,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                        <TextBox Width="200" Foreground="#f03434" Text="{Binding Book.Count,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Buttons Section -->
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+                    <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" Background="#ff9438" Content="{Binding ButtonContent}" HorizontalAlignment="Center" Command="{Binding AddBookCommand}"  CommandParameter="{Binding ElementName=window}" 
+                            VerticalAlignment="Bottom" Margin="0,20,10,20"/>
+                    <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" Background="#ff9438" Content="Cancel" HorizontalAlignment="Center" Command="{Binding CloseCommand}"  CommandParameter="{Binding ElementName=window}" 
+                            VerticalAlignment="Bottom" Margin="10,20,0,20"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+
+    </Grid>
+</Window>

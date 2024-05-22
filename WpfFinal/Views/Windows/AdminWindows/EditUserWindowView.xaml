@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfFinal.Views.Windows.AdminWindows.EditUserWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFinal.Views.Windows.AdminWindows"
+xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+       Title="" Height="400" Width="340" ResizeMode="NoResize" WindowStyle="None" Background="#f1f1f1" Name="window" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!--Close Button -->
+        <Button Background="Transparent" CommandParameter="{Binding ElementName=window}" 
+Command="{Binding CloseCommand}" 
+Style="{StaticResource MaterialDesignFloatingActionButton}" ToolTip="Close" HorizontalAlignment="Right" VerticalAlignment="Center" Margin=" 0 0 10 0" Width="40" Height="40" BorderThickness="10">
+            <materialDesign:PackIcon Kind="Close" Foreground="red" Padding="20"/>
+        </Button>
+
+
+        <Label Grid.Column="0" Content="Edit User" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="39" Foreground="#f03434" FontFamily="Times New Roman" FontStyle="Italic" FontWeight="ExtraBlack"/>
+
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <!-- Image Section -->
+                    <Image  Height="100" Width="120" Grid.Row="0" Source="/Images/User.png" />
+
+                <!-- Details Section -->
+                <StackPanel HorizontalAlignment="Center" Grid.Row="1" Margin="12,20,12,20" Orientation="Horizontal">
+                    <!-- Labels -->
+                    <StackPanel >
+                        <Label Content="Username" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                        <Label Content="Email" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                        <Label Content="Password" FontSize="16" FontWeight="DemiBold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" FontFamily="Times New Roman"/>
+                    </StackPanel>
+
+                    <!-- TextBoxes -->
+                    <StackPanel Margin="12,0,0,0">
+                        <TextBox Width="210" Foreground="#f03434" Text="{Binding Temp.Name,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                        <TextBox Width="210" Foreground="#f03434" Text="{Binding Temp.Email ,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                        <TextBox Width="210" Foreground="#f03434" Text="{Binding Temp.Password,UpdateSourceTrigger=PropertyChanged}" FontSize="16" FontWeight="DemiBold" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Buttons Section -->
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+                    <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" Background="#ff9438" Content="Save" HorizontalAlignment="Center" Command="{Binding SaveChanges}"  CommandParameter="{Binding ElementName=window}" 
+                            VerticalAlignment="Bottom" Margin="0,20,10,20"/>
+                    <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}" Background="#ff9438" Content="Cancel" HorizontalAlignment="Center" Command="{Binding CloseCommand}"  CommandParameter="{Binding ElementName=window}" 
+                            VerticalAlignment="Bottom" Margin="10,20,0,20"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+
+
+    </Grid>
+</Window>
