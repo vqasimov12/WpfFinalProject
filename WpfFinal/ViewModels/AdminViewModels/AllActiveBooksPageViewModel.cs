@@ -17,8 +17,7 @@ public class AllActiveBooksPageViewModel : BaseViewModel
     public void Refresh()
     {
         var data = App.Container.GetInstance<AppDbContext>();
-        //SaveChangesToFileService.Save();
-        //data.ReadUsersFromFile();
+        AllBooks = new();
         foreach (var u in data.Users)
             foreach (var b in u.ActiveBooks)
                 AllBooks.Add(b);
